@@ -1,15 +1,35 @@
-<div id="starterPage">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EchoUser Analytics</title>
+    
+    <link rel="stylesheet" type="text/css" href="${_r.contextPath}/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${_r.contextPath}/bootstrap/css/bootstrap-responsive.css" />
+    
+    <link rel="stylesheet" type="text/css" href="${_r.contextPath}/css/imports-all.less.css">
+    
+    [@webBundle path="/js/" type="js" /]
+    
+    [#-- Global Initialization --] 
+    <script type="text/javascript">
+      // set the contextPath as a javascript global variable
+      var contextPath = "${_r.contextPath}";
+      
+      // set the default to load the template
+      brite.defaultComponentConfig.loadTmpl = true;
+    </script>
+    [#-- /Global Initialization --] 
+    	
+  </head>
 
-  <h1>Congratulation</h1>
-  
-  <h2>You got Snow working!</h2>
-
-  <h2>Todos</h2>
-  
-  <h3>1) in java source: Rename the "com.example.myapp" package to maps your application convention</h3>
-  
-  <h3>2) in /webapp/WEB-INFO/snow.properties change the snow.webApplicationModules to reference your new Application guice module class name </h3>
-  
-  <h3>3) Remove the ".git" folder and create your own SCM</h3>
-  
-</div>
+  <body>
+  	<div id="bodyPage"></div>
+  	
+  	<script type="text/javascript">
+		$(function(){
+			brite.display("MainScreen",$("#bodyPage"));
+		});
+	</script>
+  </body>
+</html>

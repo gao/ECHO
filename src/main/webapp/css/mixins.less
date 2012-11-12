@@ -1,0 +1,19 @@
+// mixins.less
+// it has some very useful less macros. 
+// -----------------------------------------------------------------
+
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Border Radius
+.background-image(@placeHolder,@startColor, @startColorPer, @endColor, @endColorPer) {
+	background-image: -moz-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+  	background-image: -o-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+ 	background-image: -webkit-linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+  	background-image: linear-gradient(@placeHolder, @startColor @startColorPer, @endColor @endColorPer);
+}
