@@ -6,11 +6,11 @@ var app = app || {};
 	
 	if(app.dataMode == 'Remote'){
 		//register RemoteDao
-		app.TodoDao = brite.registerDao(new brite.dao.RemoteDao("Todo"));
+		app.StudyDao = brite.registerDao(new brite.dao.RemoteDao("Study"));
 
 	}else{
 		//register InMemoryDao
-		app.TodDao = brite.registerDao(new brite.InMemoryDaoHandler("Todo"));
+		app.StudyDao = brite.registerDao(new brite.InMemoryDaoHandler("Study"));
 
 	}
 	

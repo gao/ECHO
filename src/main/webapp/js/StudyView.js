@@ -2,23 +2,35 @@
 
 	brite.registerView("StudyView", {
 		loadTmpl : true,
-		parent : "#bodyPage"
+		emptyParent : true,
+		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			var view = this;
-			return $("#tmpl-StudyView").render({});
+			return $.when(app.StudyDao.list()).pipe(function(studyList){
+				var haveStudy = false;
+				if(studyList && studyList.length > 0){
+					haveStudy = true;
+				}
+				return $("#tmpl-StudyView").render({studies:studyList, haveStudy:haveStudy});
+			});	
 		},
 		
 		postDisplay: function(){
 			var view = this;
 		 	var $e = view.$el;
-		 	view.$sectionContent = $e.find("section.content"); 	
+		},
+		
+		events: {
+			"btap; .btnStudy": btnStudyMethod 
 		}
 
 	});
 	
 	// --------- Event Methods --------- //
-	
+	function btnStudyMethod(event){
+		var view = this;
+		brite.display("StudyCreate");
+	}
 	// --------- /Event Methods --------- //
 	
 

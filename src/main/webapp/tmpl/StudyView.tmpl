@@ -1,28 +1,31 @@
 <script id="tmpl-StudyView" type="text/html">
 	<div class="StudyView">
-		<header>
-          <h2>EchoUser Analytics</h2>
-        </header>
-        
         <section class="heading">
-        	<label> 
-          		<span class="title"></span>
-          	</label>
+        	{{if haveStudy}}
+        	<div class="headingLabel">
+        		<label> 
+          			<span class="title">Studies</span>
+          		</label>
+          	</div>
+          	{{/if}}
         </section>
         
-        <section class="content">      
+        <section class="content"> 
+        	{{if haveStudy}}     
+        	<div class="studyList">
+        		
+        	</div>
+        	{{else}}
         	<div class="createNew">
         		<div class="top">
-        			<button class="btn btn-large btn-primary">Create a study now!</button>
+        			<button class="btn btn-primary btn-large btnStudy">Create a study now!</button>
         		</div>
         		
         		<div class="bottom">
         			<label>Empower EXPERIENCE</label>
         		</div>
         	</div>
-        	<div class="studyList">
-        		
-        	</div>
+        	{{/if}}
         </section>
 	</div>  
 </script>

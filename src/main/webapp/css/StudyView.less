@@ -1,25 +1,11 @@
-.StudyView header{
-  	position: relative;
-  	padding: 0;
-  	height: 26px;
-  	.background-image(bottom, #1C1C1C, 0%, #1C1C1C, 100%);
-}
-
-.StudyView header h2{
-  	color: #E0E0E0;
-  	letter-spacing: .2em;
-  	line-height: normal;
-  	font-weight: bold;
-  	margin: 0;
-  	padding: 5px 0 0 10px;
-  	font-size: 14px;
-  	text-align: left;
-}
-
 .StudyView section.heading{
   	position: relative;
   	margin: 0;
   	height: 28px;
+}
+
+.StudyView section.heading .headingLabel{
+	border-bottom: solid 1px #DDD;
 }
 
 .StudyView section.heading label{
@@ -29,7 +15,7 @@
 }
 
 .StudyView section.content{
-  	top: 70px; right: 0px; bottom: 0px; left: 0; 
+  	margin-top:10px;
   	overflow: auto;
 }
 
@@ -55,5 +41,4 @@
 .StudyView section.content .studyList{
 	display:none;
 	text-align: center;
-	border-top: solid 1px #DDD;
 }
