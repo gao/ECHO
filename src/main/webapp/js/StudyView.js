@@ -29,7 +29,7 @@
 	// --------- Event Methods --------- //
 	function btnStudyMethod(event){
 		var view = this;
-		brite.display("StudyCreate");
+		brite.display("StudyCreate",null,{});
 	}
 	// --------- /Event Methods --------- //
 	

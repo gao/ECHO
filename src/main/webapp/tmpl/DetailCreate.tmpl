@@ -1,0 +1,38 @@
+<script id="tmpl-DetailCreate" type="text/html">
+	<div class="DetailCreate">
+        <section class="DetailCreate-header heading">
+        	<div class="back">
+        		<button class="btn btn-inverse btn-mini btnBack">Back</button>
+        	</div>
+        	<div class="title">
+        		<span>Study Details</span>
+        	</div>
+        </section>
+        
+        <div class="DetailCreate-content  modal-body">
+        	<div class="form-vertical">
+				<div class="control-group">
+					<div class="control-label">Name:</div>
+					<div class="controls">
+						<input type='text' name="name" value="{{:name}}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Description:</div>
+					<div class="controls">
+						<textarea rows="4" name="description">{{:description}}</textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Tags:</div>
+					<div class="controls">
+						<input type='text' name="tag" value="{{:tag}}" />
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="DetailCreate-footer">
+			<div class="btn btn-primary btnCreate">Save</div>
+		</div>
+	</div>  
+</script>
