@@ -36,7 +36,9 @@
 		events: {
 			"btap; .btnBackHome": btnBackHomeMethod, 
 			
-			"btap; .btnDetail": btnDetailMethod 
+			"btap; .btnDetail": btnDetailMethod,
+			
+			"btap; .btnTask": btnTaskMethod
 		}
 
 	});
@@ -49,6 +51,11 @@
 	function btnDetailMethod(event){
 		var view = this;
 		brite.display("DetailCreate",null,{id:view.studytId});
+	}
+	
+	function btnTaskMethod(event){
+		var view = this;
+		brite.display("TaskView",null,{id:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	

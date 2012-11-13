@@ -11,7 +11,6 @@
 				if(studyList && studyList.length > 0){
 					haveStudy = true;
 				}
-				console.log(studyList);
 				return $("#tmpl-StudyView").render({studies:studyList, haveStudy:haveStudy});
 			});	
 		},
