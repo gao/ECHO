@@ -1,35 +1,38 @@
-.StudyView section.heading{
+.StudyView .StudyView-header{
   	position: relative;
-  	margin: 0;
-  	height: 28px;
+  	margin-left: 5px;
+	margin-right: 5px;
 }
 
-.StudyView section.heading .headingLabel{
-	border-bottom: solid 1px #DDD;
+.StudyView .StudyView-header .headingLabel{
+	height:30px;
+	line-height: 30px;
+	text-align:center; 
+	border-bottom: 1px solid #000;
 }
 
-.StudyView section.heading label{
-  	display: block;
-  	margin: 5px 0 5px 40px;
-  	font-weight: bold;
+.StudyView .StudyView-header .title{
+	margin:0 50px;
+	font-weight: bold;
+	font-size: 18px;
 }
 
-.StudyView section.content{
+.StudyView .StudyView-content{
   	margin-top:10px;
   	overflow: auto;
 }
 
-.StudyView section.content .createNew{
+.StudyView .StudyView-content .createNew{
  	text-align: center;
 }
-.StudyView section.content .createNew .top{
+.StudyView .StudyView-content .createNew .top{
  	margin-top:5px;
 }
-.StudyView section.content .createNew .bottom{
+.StudyView .StudyView-content .createNew .bottom{
 	margin-top:200px;
  	margin-bottom:20px
 }
-.StudyView section.content .createNew .bottom label{
+.StudyView .StudyView-content .createNew .bottom label{
 	color: #C9901E;
   	letter-spacing: .2em;
 	line-height: normal;
@@ -38,7 +41,7 @@
   	font-size: 16px;
 }
 
-.StudyView section.content .studyList{
+.StudyView .StudyView-content .studyList{
 	display:none;
 	text-align: center;
 }

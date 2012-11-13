@@ -1,16 +1,14 @@
 <script id="tmpl-StudyView" type="text/html">
 	<div class="StudyView">
-        <section class="heading">
+        <section class="StudyView-header">
         	{{if haveStudy}}
         	<div class="headingLabel">
-        		<label> 
-          			<span class="title">Studies</span>
-          		</label>
+          		<div class="title">Studies</div>
           	</div>
           	{{/if}}
         </section>
         
-        <section class="content"> 
+        <div class="StudyView-content"> 
         	{{if haveStudy}}     
         	<div class="studyList">
         		
@@ -26,6 +24,6 @@
         		</div>
         	</div>
         	{{/if}}
-        </section>
+        </div>
 	</div>  
 </script>
