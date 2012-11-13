@@ -10,8 +10,12 @@
         
         <div class="StudyView-content"> 
         	{{if haveStudy}}     
+        	<div class="newStudy">
+        		<button class="btn btn-inverse btn-block btnStudy">New Study</button>
+        	</div>
+        	<div class="dashedLine"></div>
         	<div class="studyList">
-        		
+        		{{for #data tmpl="#tmpl-StudyView-studyList" /}}
         	</div>
         	{{else}}
         	<div class="createNew">
@@ -26,4 +30,16 @@
         	{{/if}}
         </div>
 	</div>  
+</script>
+
+
+<script id="tmpl-StudyView-studyList" type="text/html">
+	<div class="StudyView-studyList">
+     	{{for studies}}
+			<div class="studyPart" data-entity="Study" data-entity-id="{{:id}}">
+				<div class="name">{{:name}}</div>
+				<div class="info">{{:tag}}</div>
+			</div>	
+      	{{/for}}
+	</div>
 </script>

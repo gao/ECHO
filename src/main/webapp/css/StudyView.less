@@ -2,11 +2,11 @@
   	position: relative;
   	margin-left: 5px;
 	margin-right: 5px;
+	height:30px;
+	line-height: 30px;
 }
 
 .StudyView .StudyView-header .headingLabel{
-	height:30px;
-	line-height: 30px;
 	text-align:center; 
 	border-bottom: 1px solid #000;
 }
@@ -18,10 +18,19 @@
 }
 
 .StudyView .StudyView-content{
-  	margin-top:10px;
-  	overflow: auto;
+  	margin-top:5px;
 }
 
+.StudyView .StudyView-content .newStudy{
+	max-width: 260px; 
+	margin: 10px auto 10px;
+}
+.StudyView .StudyView-content .dashedLine{
+	margin: 5px auto 10px;
+	width:200px;
+	height:1px;
+	border-bottom:1px dashed #666;
+}
 .StudyView .StudyView-content .createNew{
  	text-align: center;
 }
@@ -41,7 +50,33 @@
   	font-size: 16px;
 }
 
-.StudyView .StudyView-content .studyList{
-	display:none;
-	text-align: center;
+.StudyView .StudyView-studyList{
+	margin: 0 auto;
+	max-width: 680px;
+}
+
+.StudyView .StudyView-studyList .studyPart{
+	height:46px;
+	background: #FFFFFF;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top:2px;
+}
+.StudyView .StudyView-studyList .studyPart:hover{
+	cursor: pointer;
+	background: #F2F2F2;
+}
+.StudyView .StudyView-studyList .studyPart .name{
+	text-align: left;
+	margin-left:10px;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top:5px;
+}
+
+.StudyView .StudyView-studyList .studyPart .info{
+	text-align: left;
+	margin-left:10px;
+	font-size: 12px;
+	color: #777;
 }

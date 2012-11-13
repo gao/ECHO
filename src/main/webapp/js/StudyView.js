@@ -11,6 +11,7 @@
 				if(studyList && studyList.length > 0){
 					haveStudy = true;
 				}
+				console.log(studyList);
 				return $("#tmpl-StudyView").render({studies:studyList, haveStudy:haveStudy});
 			});	
 		},
@@ -21,7 +22,9 @@
 		},
 		
 		events: {
-			"btap; .btnStudy": btnStudyMethod 
+			"btap; .btnStudy": btnStudyMethod,
+			
+			"btap; .studyPart": studyPartMethod,
 		}
 
 	});
@@ -30,6 +33,13 @@
 	function btnStudyMethod(event){
 		var view = this;
 		brite.display("StudyCreate",null,{});
+	}
+	
+	function studyPartMethod(event){
+		var view = this;
+		var $td = $(event.currentTarget);
+		var studyId = $td.bEntity("Study").id;
+		brite.display("StudyCreate",null,{id:studyId});
 	}
 	// --------- /Event Methods --------- //
 	

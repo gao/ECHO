@@ -20,8 +20,6 @@
 			}
 			dfd.done(function(study) {
 				view.studyId = study.id;
-				console.log("-----------------");
-				console.log(study);
 				renderer.render("DetailCreate", study).done(function(html) {
 					var $e = $(html);
 					createDfd.resolve($e);
