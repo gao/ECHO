@@ -14,13 +14,13 @@
         		<button class="btn btn-primary btn-block btn-large btnDetail">Details</button>
         	</p> 
         	<p>
-        		<button class="btn btn-warning btn-block btn-large btnTask">Tasks</button>
+        		<button class="btn btn-warning btn-block btn-large btnTask" {{if !id}}disabled{{/if}}>Tasks</button>
         	</p> 
         	<p>
-        		<button class="btn btn-success btn-block btn-large btnTestUser">Users</button>
+        		<button class="btn btn-success btn-block btn-large btnTestUser" {{if !id}}disabled{{/if}}>Users</button>
         	</p> 
         	<p>
-        		<button class="btn btn-danger btn-block btn-large btnResult">Results</button>
+        		<button class="btn btn-danger btn-block btn-large btnResult" {{if !id}}disabled{{/if}}>Results</button>
         	</p> 
         </div>
         
