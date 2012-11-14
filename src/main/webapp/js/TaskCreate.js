@@ -1,14 +1,12 @@
 ;(function() {
 
-	brite.registerView("TaskView", {
+	brite.registerView("TaskCreate", {
 		loadTmpl : true,
 		emptyParent : true,
 		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			return $.when(app.TaskDao.list()).pipe(function(taskList){
-				return $("#tmpl-TaskView").render({tasks:taskList});
-			});	
+			return $("#tmpl-TaskCreate").render({});
 		},
 		
 		postDisplay: function(data, config){
@@ -19,15 +17,15 @@
 		},
 		
 		events: {
-			"btap; .btnTask": btnTaskMethod
+			"btap; .btnBack": btnBackMethod, 
 		}
 
 	});
 	
 	// --------- Event Methods --------- //
-	function btnTaskMethod(event){
+	function btnBackMethod(){
 		var view = this;
-		brite.display("TaskCreate",null,{id:view.studytId});
+		brite.display("TaskView",null,{id:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	

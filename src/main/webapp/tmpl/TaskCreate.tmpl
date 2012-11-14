@@ -1,0 +1,45 @@
+<script id="tmpl-TaskCreate" type="text/html">
+	<div class="TaskCreate">
+        <div class="TaskCreate-header heading">
+        	<div class="back">
+        		<button class="btn btn-inverse btn-mini btnBack">Back</button>
+        	</div>
+        	<div class="title">
+        		<span>Task Details</span>
+        	</div>
+        </div>
+        
+        <div class="TaskCreate-content modal-body">  
+        	<div class="form-vertical">
+				<div class="control-group">
+					<div class="control-label">Title:</div>
+					<div class="controls">
+						<input type='text' name="name" value="{{:title}}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Name:</div>
+					<div class="controls">
+						<input type='text' name="name" value="{{:name}}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Type:</div>
+					<div class="controls">
+						<select name="type">
+  							<option value ="">String</option>
+						  	<option value ="">True/False</option>
+						  	<option value="">Rating</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Info:</div>
+					<div class="controls">
+						<textarea rows="4" name="info">{{:info}}</textarea>
+					</div>
+				</div>
+			</div>
+        </div>
+	</div>  
+</script>
