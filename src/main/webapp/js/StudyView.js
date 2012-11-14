@@ -10,6 +10,9 @@
 				var haveStudy = false;
 				if(studyList && studyList.length > 0){
 					haveStudy = true;
+					$.each(studyList,function(i,study){
+						study.creationDate = app.util.formatDate(study.creationDate,"medium");
+					});
 				}
 				return $("#tmpl-StudyView").render({studies:studyList, haveStudy:haveStudy});
 			});	

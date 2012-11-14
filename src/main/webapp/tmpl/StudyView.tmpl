@@ -40,7 +40,10 @@
      	{{for studies}}
 			<div class="studyPart" data-entity="Study" data-entity-id="{{:id}}">
 				<div class="name">{{:name}}</div>
-				<div class="info">{{:tag}}</div>
+				<div class="info">
+					<span class="creationDate">{{:creationDate}}</span>
+					<span class="tag">{{:tag}}</span>
+				</div>
 			</div>	
       	{{/for}}
 	</div>

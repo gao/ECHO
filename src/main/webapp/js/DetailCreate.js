@@ -68,6 +68,8 @@
 				brite.display("StudyCreate",null,{id:obj.id});
 			});
 		}else{
+			var date = new Date();
+			data.creationDate = date;
 			app.StudyDao.create(data).done(function(obj) {
 				brite.display("StudyCreate",null,{id:obj.id});
 			});
