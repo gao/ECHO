@@ -19,7 +19,9 @@
 		},
 		
 		events: {
-			"btap; .btnTask": btnTaskMethod
+			"btap; .btnTask": btnTaskMethod,
+			
+			"btap; .taskPart": taskPartMethod,
 		}
 
 	});
@@ -28,6 +30,13 @@
 	function btnTaskMethod(event){
 		var view = this;
 		brite.display("TaskCreate",null,{studytId:view.studytId});
+	}
+	
+	function taskPartMethod(event){
+		var view = this;
+		var $taskPart = $(event.currentTarget);
+		var taskId = $taskPart.bEntity("Task").id;
+		brite.display("TaskElementView",null,{taskId:taskId,studytId:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	

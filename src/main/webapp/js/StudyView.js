@@ -39,8 +39,8 @@
 	
 	function studyPartMethod(event){
 		var view = this;
-		var $td = $(event.currentTarget);
-		var studyId = $td.bEntity("Study").id;
+		var $studyPart = $(event.currentTarget);
+		var studyId = $studyPart.bEntity("Study").id;
 		brite.display("StudyCreate",null,{id:studyId});
 	}
 	// --------- /Event Methods --------- //
