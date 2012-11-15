@@ -22,15 +22,15 @@
 	<div class="TaskView-taskList">
      	{{for tasks}}
 			<div class="taskPart" data-entity="Task" data-entity-id="{{:id}}">
-				<div class="title">{{:title}}</div>
-				<div class="name">{{:name}}</div>
+				<div class="taskLabel">{{:label}}</div>
+				<div class="questionTitle">{{:questionTitle}}</div>
 				<div class="info">
-					{{if type == "true-false"}}
+					{{if questionType == "true-false"}}
 						<div class="btn-group">
  							<button class="btn">True</button>
   							<button class="btn">False</button>
  						</div>
-					{{else type == "rating-5points"}}
+					{{else questionType == "rating-5points"}}
  						<div class="btn-group">
  							<button class="btn">1</button>
   							<button class="btn">2</button>
@@ -38,7 +38,7 @@
   							<button class="btn">4</button>
   							<button class="btn">5</button>
  						</div>
-					{{else type == "rating-10points"}}
+					{{else questionType == "rating-10points"}}
 						<div class="btn-group">
  							<button class="btn">1</button>
   							<button class="btn">2</button>

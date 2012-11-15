@@ -35,17 +35,17 @@
 	function btnCreateMethod(event){
 		var view = this;
 		var $e = view.$el;
-
-		var title = $e.find("input[name='title']").val();
-		var name = $e.find("input[name='name']").val();
-		var type = $e.find("select[name='type']").val();
+		
+		var label = $e.find("input[name='label']").val();
+		var questionTitle = $e.find("input[name='questionTitle']").val();
+		var questionType = $e.find("select[name='questionType']").val();
 		var info = $e.find("textarea[name='info']").val();
 		
 		var data = {
-			title : title,
-			name : name,
+			label : label,
+			questionTitle : questionTitle,
+			questionType : questionType,
 			info : info,
-			type : type,
 			studytId : view.studytId
 		};
 		
