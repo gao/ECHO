@@ -27,7 +27,7 @@
 	// --------- Event Methods --------- //
 	function btnTaskMethod(event){
 		var view = this;
-		brite.display("TaskCreate",null,{id:view.studytId});
+		brite.display("TaskCreate",null,{studytId:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	

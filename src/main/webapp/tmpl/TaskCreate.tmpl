@@ -14,7 +14,7 @@
 				<div class="control-group">
 					<div class="control-label">Title:</div>
 					<div class="controls">
-						<input type='text' name="name" value="{{:title}}" />
+						<input type='text' name="title" value="{{:title}}" />
 					</div>
 				</div>
 				<div class="control-group">
@@ -27,19 +27,26 @@
 					<div class="control-label">Type:</div>
 					<div class="controls">
 						<select name="type">
-  							<option value ="">String</option>
-						  	<option value ="">True/False</option>
-						  	<option value="">Rating</option>
+  							<option value ="string">Descriptive line of text</option>
+						  	<option value ="true-false">True/False</option>
+						  	<option value="rating-5points">Rating - 5 points</option>
+						  	<option value="rating-10points">Rating - 10 points</option>
+						  	<option value="radio" disabled>Radio (Only allow an answer)</option>
+						  	<option value="checkbox" disabled>Checkbox (Can be more than one answer)</option>
 						</select>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group taskInfo">
 					<div class="control-label">Info:</div>
 					<div class="controls">
-						<textarea rows="4" name="info">{{:info}}</textarea>
+						<textarea rows="3" name="info">{{:info}}</textarea>
 					</div>
 				</div>
 			</div>
         </div>
+        
+        <div class="TaskCreate-footer">
+			<div class="btn btn-primary btnCreate">Save</div>
+		</div>
 	</div>  
 </script>
