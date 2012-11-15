@@ -46,7 +46,7 @@
 			questionTitle : questionTitle,
 			questionType : questionType,
 			info : info,
-			studytId : view.studytId
+			studyId : view.studytId
 		};
 		
 		app.TaskDao.create(data).done(function(obj) {

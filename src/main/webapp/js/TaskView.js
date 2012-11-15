@@ -6,7 +6,7 @@
 		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			return $.when(app.TaskDao.list()).pipe(function(taskList){
+			return $.when(app.TaskDao.getTasksByStudy(data.studytId)).pipe(function(taskList){
 				return $("#tmpl-TaskView").render({tasks:taskList});
 			});	
 		},
@@ -15,7 +15,7 @@
 			var view = this;
 		 	var $e = view.$el;
 		 	
-		 	view.studytId = data.id;
+		 	view.studytId = data.studytId;
 		},
 		
 		events: {

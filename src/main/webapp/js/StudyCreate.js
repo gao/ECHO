@@ -55,7 +55,7 @@
 	
 	function btnTaskMethod(event){
 		var view = this;
-		brite.display("TaskView",null,{id:view.studytId});
+		brite.display("TaskView",null,{studytId:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	

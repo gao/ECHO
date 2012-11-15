@@ -14,7 +14,9 @@ var app = app || {};
 		//register InMemoryDao
 		app.StudyDao = brite.registerDao(new brite.InMemoryDaoHandler("Study"));
 		
-		app.TaskDao = brite.registerDao(new brite.InMemoryDaoHandler("Task"));
+		//app.TaskDao = brite.registerDao(new brite.InMemoryDaoHandler("Task"));
+		
+		app.TaskDao = brite.registerDao(new app.InMemoryTaskDao());
 
 	}
 	
