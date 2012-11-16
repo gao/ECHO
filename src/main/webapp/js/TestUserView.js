@@ -7,6 +7,7 @@
 	}, {
 		create : function(data, config) {
 			return $.when(app.TestUserDao.list({match:{study_id:data.study_id}})).pipe(function(users){
+				$.each(users,function(i,user){user.index=i+1;});
 				return $("#tmpl-TestUserView").render({users:users});
 			});	
 		},
@@ -18,9 +19,12 @@
 		},
 		
 		events: {
+			
 			"btap; .btnUser": btnUserMethod,
 			
-			"btap; .btnBack": btnBackMethod
+			"btap; .btnBack": btnBackMethod,
+			
+			"btap; .userPart": btnUserUpdateMethod
 		}
 
 	});
@@ -31,10 +35,17 @@
 		brite.display("TestUserCreate",null,{study_id:view.study_id});
 	}
 	
+	function btnUserUpdateMethod(event){
+		var view = this;
+		var user_id = $(event.currentTarget).attr("data-entity-id");
+		brite.display("TestUserCreate",null,{study_id:view.study_id,user_id:user_id});
+	}
+	
 	function btnBackMethod(){
 		var view = this;
-		brite.display("StudyCreate",null,{id:view.study_id});
+		brite.display("StudyCreate",null,{study_id:view.study_id});
 	}
+	
 	// --------- /Event Methods --------- //
 	
 
