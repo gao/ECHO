@@ -13,7 +13,7 @@
 		postDisplay: function(data){
 			var view = this;
 		 	var $e = view.$el;
-		 	view.uid = data.id || 0;
+		 	view.user_id = data.user_id || 0;
 		 	view.study_id = data.study_id;
 		},
 		
@@ -36,7 +36,7 @@
 		var view = this;
 		var $e = view.$el;
 		
-		var id = view.uid;
+		var id = view.user_id;
 		var name = $e.find(".content input[name='name']").val();
 		var label = $e.find(".content input[name='label']").val();
 		var user = {id:id,name:name,label:label,study_id:view.study_id};
