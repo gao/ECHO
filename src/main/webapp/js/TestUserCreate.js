@@ -7,14 +7,32 @@
 	}, {
 		create : function(data, config) {
 			var view = this;
-			return $("#tmpl-TestUserCreate").render(data);
+			var dfd = $.Deferred();
+			var createDfd = $.Deferred();
+			data = data || {};
+	
+			if (data.user_id) {
+				app.TestUserDao.get(data.user_id).done(function(user) {
+					dfd.resolve(user);
+				});
+			} else {
+				dfd.resolve({});
+			}
+			dfd.done(function(user) {
+				view.study_id = data.study_id;
+				view.user_id = user.id;
+				renderer.render("TestUserCreate", user).done(function(html) {
+					var $e = $(html);
+					createDfd.resolve($e);
+				});
+			});
+	
+			return createDfd.promise();
 		},
 		
 		postDisplay: function(data){
 			var view = this;
 		 	var $e = view.$el;
-		 	view.user_id = data.user_id || 0;
-		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -30,14 +48,14 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(){
 		var view = this;
-		brite.display("TestUserView",null,{sid:view.study_id});
+		brite.display("TestUserView",null,{study_id:view.study_id});
 	}
 	
 	function btnSaveMethod(){
 		var view = this;
 		var $e = view.$el;
 		
-		var id = view.user_id;
+		var id = view.user_id||0;
 		var name = $e.find(".TestUserCreate-content input[name='name']").val();
 		var label = $e.find(".TestUserCreate-content input[name='label']").val();
 		var user = {id:id,name:name,label:label,study_id:view.study_id};
