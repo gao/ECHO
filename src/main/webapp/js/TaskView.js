@@ -22,6 +22,8 @@
 			"btap; .btnTask": btnTaskMethod,
 			
 			"btap; .taskPart": taskPartMethod,
+			
+			"btap; .lineNavMenu": lineNavMenuMethod,
 		}
 
 	});
@@ -37,6 +39,11 @@
 		var $taskPart = $(event.currentTarget);
 		var task_id = $taskPart.bEntity("Task").id;
 		brite.display("TaskElementView",null,{task_id:task_id,study_id:view.study_id});
+	}
+	
+	function lineNavMenuMethod(event){
+		var view = this;
+		brite.display("LineNavMenuView",null,{study_id:view.study_id});
 	}
 	// --------- /Event Methods --------- //
 	
