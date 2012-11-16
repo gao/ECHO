@@ -18,7 +18,8 @@
 		},
 		
 		events: {
-			"btap; .btnBack": btnBackMethod,
+			
+			"btap; .btnBack": btnBackMethod ,
 			
 			"btap; .btnSave": btnSaveMethod
 		}
@@ -37,8 +38,8 @@
 		var $e = view.$el;
 		
 		var id = view.user_id;
-		var name = $e.find(".content input[name='name']").val();
-		var label = $e.find(".content input[name='label']").val();
+		var name = $e.find(".TestUserCreate-content input[name='name']").val();
+		var label = $e.find(".TestUserCreate-content input[name='label']").val();
 		var user = {id:id,name:name,label:label,study_id:view.study_id};
 		
 		if(id==0){

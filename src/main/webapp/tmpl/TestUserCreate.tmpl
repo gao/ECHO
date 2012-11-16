@@ -1,21 +1,31 @@
 <script id="tmpl-TestUserCreate" type="text/html">
 	<div class="TestUserCreate">
-		<div class="navs">      
+	
+		<div class="TestUserCreate-header heading">      
 			  <div class="back"><button class="btn btn-inverse btn-mini btnBack">Back</button></div>
 			  <div class="title"><span>User Details</span></div>
         </div>
-        <div class="content">
-        	<div class="sec">
-        		<div class="fieldname"><span>Name:</span></div>
-        		<div class="field"><input value="{{:name}}" name="name" /></div>
+        
+        <div class="TestUserCreate-content modal-body">			
+			<div class="form-vertical">
+				<div class="control-group">
+					<div class="control-label">Name:</div>
+					<div class="controls">
+						<input type='text' name="name" value="{{:name}}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="control-label">Label:</div>
+					<div class="controls">
+						<input type='text' name="label" value="{{:label}}" />
+					</div>
+				</div>
 			</div>
-        	<div class="sec">
-        		<div class="fieldname"><span>Label:</span></div>
-        		<div class="field"><input name="label" value="{{:label}}" /></div>
-			</div> 
-        	<div class="sec">
-        		<button class="btn btn-large btn-primary btnSave">Save</button>
-        	</div>
         </div>
+        
+        <div class="TestUserCreate-footer">
+			<div class="btn btn-primary btnSave">Save</div>
+		</div>
+		
 	</div>  
 </script>
