@@ -1,0 +1,37 @@
+<script id="tmpl-TestUserView" type="text/html">
+	<div class="TestUserView">
+        <div class="TestUserView-header heading">
+            <div class="back">
+        		<button class="btn btn-inverse btn-mini btnBackHome">Back</button>
+        	</div>
+        	<div class="title">
+        		<span>Users</span>
+        	</div>
+        </div>
+        
+        <div class="TestUserView-content">  
+        	<div class="newUser">
+        		<button class="btn btn-inverse btn-block btnUser">Add User</button>
+        	</div>
+        	<div class="dashedLine"></div>
+        	<div class="userList">
+        		{{for #data tmpl="#tmpl-TestUserView-userList" /}}
+        	</div>
+        </div>
+	</div>  
+</script>
+
+<script id="tmpl-TestUserView-userList" type="text/html">
+	<div class="TestUserView-userList">
+     	{{for users}}
+			<div class="userPart" data-entity="TestUser" data-entity-id="{{:id}}">
+				<div class="user-index"><span>{{:index}}</span></div>
+				<div class="user-info">
+					<div class="user-name">{{:name}}</div>
+					<div class="user-label">{{:label}}</div>
+				</div>
+				<div class="media-icon"><span><i class="icon-play-circle"></i></span></div>
+			</div>	
+      	{{/for}}
+	</div>
+</script>

@@ -38,7 +38,9 @@
 			
 			"btap; .btnDetail": btnDetailMethod,
 			
-			"btap; .btnTask": btnTaskMethod
+			"btap; .btnTask": btnTaskMethod,
+			
+			"btap; .btnTestUser": btnTestUserMethod
 		}
 
 	});
@@ -56,6 +58,11 @@
 	function btnTaskMethod(event){
 		var view = this;
 		brite.display("TaskView",null,{studytId:view.studytId});
+	}
+	
+	function btnTestUserMethod(event){
+		var view = this;
+		brite.display("TestUserView",null,{study_id:view.studytId});
 	}
 	// --------- /Event Methods --------- //
 	
