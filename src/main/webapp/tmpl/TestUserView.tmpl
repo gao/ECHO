@@ -25,7 +25,7 @@
 	<div class="TestUserView-userList">
      	{{for users}}
 			<div class="userPart" data-entity="TestUser" data-entity-id="{{:id}}">
-				<div class="user-index"><span>{{:index}}</span></div>
+				<div class="user-index"><span>{{:#index+1}}</span></div>
 				<div class="user-info">
 					<div class="user-name">{{:name}}</div>
 					<div class="user-label">{{:label}}</div>

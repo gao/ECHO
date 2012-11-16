@@ -7,7 +7,6 @@
 	}, {
 		create : function(data, config) {
 			return $.when(app.TestUserDao.list({match:{study_id:data.study_id}})).pipe(function(users){
-				$.each(users,function(i,user){user.index=i+1;});
 				return $("#tmpl-TestUserView").render({users:users});
 			});	
 		},
