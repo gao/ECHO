@@ -18,15 +18,22 @@
 		},
 		
 		events: {
-			"btap; .btnTask": btnTaskMethod
+			"btap; .btnUser": btnUserMethod,
+			
+			"btap; .btnBack": btnBackMethod
 		}
 
 	});
 	
 	// --------- Event Methods --------- //
-	function btnTaskMethod(event){
+	function btnUserMethod(event){
 		var view = this;
-		brite.display("TaskCreate",null,{studytId:view.studytId});
+		brite.display("TestUserCreate",null,{study_id:view.study_id});
+	}
+	
+	function btnBackMethod(){
+		var view = this;
+		brite.display("StudyCreate",null,{id:view.study_id});
 	}
 	// --------- /Event Methods --------- //
 	
