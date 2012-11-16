@@ -6,7 +6,7 @@
 		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			return $.when(app.TaskDao.get(data.taskId)).pipe(function(task){
+			return $.when(app.TaskDao.get(data.task_id)).pipe(function(task){
 				return $("#tmpl-TaskElementView").render(task);
 			});	
 		},
@@ -15,8 +15,8 @@
 			var view = this;
 		 	var $e = view.$el;
 		 	
-		 	view.taskId = data.taskId;
-		 	view.studytId = data.studytId;
+		 	view.task_id = data.task_id;
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -31,12 +31,12 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(event){
 		var view = this;
-		brite.display("TaskView",null,{studytId:view.studytId});
+		brite.display("TaskView",null,{study_id:view.study_id});
 	}
 	
 	function btnTaskElementMethod(event){
 		var view = this;
-		brite.display("TaskElementCreate",null,{taskId:view.taskId});
+		brite.display("TaskElementCreate",null,{task_id:view.task_id});
 	}
 	// --------- /Event Methods --------- //
 	

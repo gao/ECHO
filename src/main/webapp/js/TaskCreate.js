@@ -13,7 +13,7 @@
 			var view = this;
 		 	var $e = view.$el;
 		 	
-		 	view.studytId = data.studytId;
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -29,7 +29,7 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(){
 		var view = this;
-		brite.display("TaskView",null,{id:view.studytId});
+		brite.display("TaskView",null,{study_id:view.study_id});
 	}
 	
 	function btnCreateMethod(event){
@@ -46,11 +46,11 @@
 			questionTitle : questionTitle,
 			questionType : questionType,
 			info : info,
-			studyId : view.studytId
+			study_id : view.study_id
 		};
 		
 		app.TaskDao.create(data).done(function(obj) {
-			brite.display("TaskView",null,{studytId:view.studytId});
+			brite.display("TaskView",null,{study_id:view.study_id});
 		});
 	}
 	

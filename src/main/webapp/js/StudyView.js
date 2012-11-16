@@ -40,8 +40,8 @@
 	function studyPartMethod(event){
 		var view = this;
 		var $studyPart = $(event.currentTarget);
-		var studyId = $studyPart.bEntity("Study").id;
-		brite.display("StudyCreate",null,{id:studyId});
+		var study_id = $studyPart.bEntity("Study").id;
+		brite.display("StudyCreate",null,{study_id:study_id});
 	}
 	// --------- /Event Methods --------- //
 	

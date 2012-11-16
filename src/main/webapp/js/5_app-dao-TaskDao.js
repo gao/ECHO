@@ -7,13 +7,13 @@
 	}
 	brite.inherit(InMemoryTaskDao,brite.InMemoryDaoHandler);
 	
-	InMemoryTaskDao.prototype.getTasksByStudy = function(studyId){
+	InMemoryTaskDao.prototype.getTasksByStudy = function(study_id){
 		var dao = this;
 		var dfd = $.Deferred();
-		if (studyId && studyId != "") {
+		if (study_id && study_id != "") {
 			brite.dao("Task").list({
 				match : {
-					studyId : studyId
+					study_id : study_id
 				}
 			}).done(function(tasks) {
 				dfd.resolve(tasks);

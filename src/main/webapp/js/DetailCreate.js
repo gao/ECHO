@@ -11,15 +11,15 @@
 			var createDfd = $.Deferred();
 			data = data || {};
 
-			if (data.id) {
-				app.StudyDao.get(data.id).done(function(study) {
+			if (data.study_id) {
+				app.StudyDao.get(data.study_id).done(function(study) {
 					dfd.resolve(study);
 				});
 			} else {
 				dfd.resolve({});
 			}
 			dfd.done(function(study) {
-				view.studyId = study.id;
+				view.study_id = study.study_id;
 				renderer.render("DetailCreate", study).done(function(html) {
 					var $e = $(html);
 					createDfd.resolve($e);
@@ -29,9 +29,11 @@
 			return createDfd.promise();
 		},
 		
-		postDisplay: function(){
+		postDisplay: function(data){
 			var view = this;
 		 	var $e = view.$el;
+		 	
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -45,7 +47,7 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(){
 		var view = this;
-		brite.display("StudyCreate",null,{id:view.studyId});
+		brite.display("StudyCreate",null,{study_id:view.study_id});
 	}
 	
 	function btnCreateMethod(event){
@@ -62,16 +64,16 @@
 		};
 
 		// if study id exist do update,else do create
-		if (view.studyId) {
-			data.id = view.studyId;
+		if (view.study_id) {
+			data.id = view.study_id;
 			app.StudyDao.update(data).done(function(obj) {
-				brite.display("StudyCreate",null,{id:obj.id});
+				brite.display("StudyCreate",null,{study_id:obj.id});
 			});
 		}else{
 			var date = new Date();
 			data.creationDate = date;
 			app.StudyDao.create(data).done(function(obj) {
-				brite.display("StudyCreate",null,{id:obj.id});
+				brite.display("StudyCreate",null,{study_id:obj.id});
 			});
 		}
 

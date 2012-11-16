@@ -10,15 +10,15 @@
 			var dfd = $.Deferred();
 			var createDfd = $.Deferred();
 			data = data || {};
-			if (data.id) {
-				app.StudyDao.get(data.id).done(function(study) {
+			if (data.study_id) {
+				app.StudyDao.get(data.study_id).done(function(study) {
 					dfd.resolve(study);
 				});
 			} else {
 				dfd.resolve({});
 			}
 			dfd.done(function(study) {
-				view.studytId = study.id;
+				view.study_id = study.study_id;
 				renderer.render("StudyCreate", study).done(function(html) {
 					var $e = $(html);
 					createDfd.resolve($e);
@@ -28,9 +28,11 @@
 			return createDfd.promise();
 		},
 		
-		postDisplay: function(){
+		postDisplay: function(data){
 			var view = this;
 		 	var $e = view.$el;
+		 	
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -52,17 +54,17 @@
 	
 	function btnDetailMethod(event){
 		var view = this;
-		brite.display("DetailCreate",null,{id:view.studytId});
+		brite.display("DetailCreate",null,{study_id:view.study_id});
 	}
 	
 	function btnTaskMethod(event){
 		var view = this;
-		brite.display("TaskView",null,{studytId:view.studytId});
+		brite.display("TaskView",null,{study_id:view.study_id});
 	}
 	
 	function btnTestUserMethod(event){
 		var view = this;
-		brite.display("TestUserView",null,{study_id:view.studytId});
+		brite.display("TestUserView",null,{study_id:view.study_id});
 	}
 	// --------- /Event Methods --------- //
 	

@@ -6,7 +6,7 @@
 		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			return $.when(app.TaskDao.getTasksByStudy(data.studytId)).pipe(function(taskList){
+			return $.when(app.TaskDao.getTasksByStudy(data.study_id)).pipe(function(taskList){
 				return $("#tmpl-TaskView").render({tasks:taskList});
 			});	
 		},
@@ -15,7 +15,7 @@
 			var view = this;
 		 	var $e = view.$el;
 		 	
-		 	view.studytId = data.studytId;
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -29,14 +29,14 @@
 	// --------- Event Methods --------- //
 	function btnTaskMethod(event){
 		var view = this;
-		brite.display("TaskCreate",null,{studytId:view.studytId});
+		brite.display("TaskCreate",null,{study_id:view.study_id});
 	}
 	
 	function taskPartMethod(event){
 		var view = this;
 		var $taskPart = $(event.currentTarget);
-		var taskId = $taskPart.bEntity("Task").id;
-		brite.display("TaskElementView",null,{taskId:taskId,studytId:view.studytId});
+		var task_id = $taskPart.bEntity("Task").id;
+		brite.display("TaskElementView",null,{task_id:task_id,study_id:view.study_id});
 	}
 	// --------- /Event Methods --------- //
 	
