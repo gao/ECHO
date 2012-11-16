@@ -16,9 +16,12 @@
         	</div>
         	<div class="dashedLine"></div>
         	<div class="taskElementList">
+        		{{if label}}
         		<div class="taskElementPart">
         			<div class="taskLabel">{{:label}}</div>
         		</div>
+        		{{/if}}
+        		{{if questionTitle}}
         		<div class="taskElementPart">
 					<div class="questionTitle">{{:questionTitle}}</div>
 					<div class="info">
@@ -53,6 +56,7 @@
 						{{/if}}
 					</div>
 				</div>
+				{{/if}}
         	</div>
         </div>
 	</div>  
