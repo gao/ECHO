@@ -18,11 +18,7 @@
 		},
 		
 		events: {
-			"btap; li[data-entity='Text']": textMethod,
-			
-			"btap; li[data-entity='Image']": ImageMethod,
-			
-			"btap; li[data-entity='Data']": DataMethod
+			"btap; li": ElementDataTypeMethod
 		},
 		
 		close : function(update) {
@@ -36,23 +32,28 @@
 	});
 	
 	// --------- Event Methods --------- //
-	function textMethod(event){
+	function ElementDataTypeMethod(event){
 		var view = this;
-		//brite.display("TaskElementCreate",null,{task_id:view.task_id});
-		view.close();
+		var $e = view.$el;
+		var $li = $(event.currentTarget);
+		var elementType = $li.attr("data-entity");
+		
+		if(elementType == "Text"){
+			view.close();
+		}else if(elementType == "Image"){
+			view.close();
+		}else if(elementType == "Data"){
+			var $elementDataType = $e.find(".elementDataType");
+			var $elementType = $e.find(".elementType");
+			
+			$elementDataType.show();
+			$elementType.hide();
+		}else{
+			view.close();
+		}
 	}
 	
-	function ImageMethod(event){
-		var view = this;
-		//brite.display("TaskElementCreate",null,{task_id:view.task_id});
-		view.close();
-	}
 	
-	function DataMethod(event){
-		var view = this;
-		//brite.display("TaskElementCreate",null,{task_id:view.task_id});
-		view.close();
-	}
 	// --------- /Event Methods --------- //
 	
 
