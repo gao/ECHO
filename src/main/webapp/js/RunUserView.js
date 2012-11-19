@@ -33,7 +33,9 @@
 		},
 		
 		events: {
-			"btap; .btnBack": btnBackMethod 
+			"btap; .btnBack": btnBackMethod ,
+			
+			"btap; .btnRunUser": btnRunUserTaskMethod 
 		}
 
 
@@ -44,8 +46,11 @@
 		var view = this;
 		brite.display("TestUserView",null,{study_id:view.study_id});
 	}
-
 	
+	function btnRunUserTaskMethod(){
+		var view = this;
+		brite.display("RunUserTaskView",null,{study_id:view.study_id,user_id:view.user_id});
+	}
 	// --------- /Event Methods --------- //
 	
 
