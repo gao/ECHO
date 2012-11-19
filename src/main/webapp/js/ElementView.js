@@ -40,6 +40,7 @@
 		
 		if(elementType == "Text"){
 			view.close();
+			brite.display("TaskElementCreate",null,{task_id:view.task_id,type:elementType});
 		}else if(elementType == "Image"){
 			view.close();
 		}else if(elementType == "Data"){
