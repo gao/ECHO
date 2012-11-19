@@ -21,9 +21,10 @@
 			
 			"btap; .btnUser": btnUserMethod,
 			
-			"btap; .btnBack": btnBackMethod,
+			"btap; .lineNavMenu.clickAble": lineNavMenuMethod,
 			
 			"btap; .userPart": btnUserUpdateMethod
+			
 		}
 
 	});
@@ -40,11 +41,10 @@
 		brite.display("TestUserCreate",null,{study_id:view.study_id,user_id:user_id});
 	}
 	
-	function btnBackMethod(){
+	function lineNavMenuMethod(event){
 		var view = this;
-		brite.display("StudyCreate",null,{study_id:view.study_id});
+		brite.display("LineNavMenuView",null,{study_id:view.study_id});
 	}
-	
 	// --------- /Event Methods --------- //
 	
 
