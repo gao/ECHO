@@ -33,10 +33,7 @@
 		},
 		
 		events: {
-			
-			"btap; .btnBack": btnBackMethod ,
-			
-			"btap; .btnSave": btnSaveMethod
+			"btap; .btnBack": btnBackMethod 
 		}
 
 
@@ -45,31 +42,9 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(){
 		var view = this;
-		brite.display("RunUserView",null,{study_id:view.study_id});
+		brite.display("TestUserView",null,{study_id:view.study_id});
 	}
-	
-	function btnSaveMethod(){
-		var view = this;
-		var $e = view.$el;
-		
-		var id = view.user_id||0;
-		var name = $e.find(".TestUserCreate-content input[name='name']").val();
-		var label = $e.find(".TestUserCreate-content input[name='label']").val();
-		var user = {id:id,name:name,label:label,study_id:view.study_id};
-		
-		if(id==0){
-			var date = new Date();
-			user.creationDate = date;
-			app.TestUserDao.create(user).done(function(user){
-				brite.display("RunUserView",null,{study_id:user.study_id});
-			});
-		}else{
-			app.TestUserDao.update(user).done(function(study){
-				brite.display("RunUserView",null,{study_id:user.study_id});			
-			});
-		}
-		
-	}
+
 	
 	// --------- /Event Methods --------- //
 	
