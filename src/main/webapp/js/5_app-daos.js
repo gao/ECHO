@@ -20,6 +20,8 @@ var app = app || {};
 		
 		//app.TaskDao = brite.registerDao(new brite.InMemoryDaoHandler("Task"));
 		
+		app.TaskElementDao = brite.registerDao(new brite.InMemoryDaoHandler("TaskElement"));
+		
 		app.TaskDao = brite.registerDao(new app.InMemoryTaskDao());
 
 	}

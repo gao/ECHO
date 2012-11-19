@@ -20,8 +20,9 @@
 		},
 		
 		events: {
-			"btap; .btnBack": btnBackMethod
+			"btap; .btnBack": btnBackMethod,
 
+			"btap; .btnCreate": btnCreateMethod 
 		}
 
 	});
@@ -30,6 +31,22 @@
 	function btnBackMethod(event){
 		var view = this;
 		brite.display("TaskElementView",null,{task_id:view.task_id});
+	}
+	
+	function btnCreateMethod(event){
+		var view = this;
+		var $e = view.$el;
+
+		var value = $e.find("input[name='value']").val();
+		var data = {
+			value : value,
+			task_id : view.task_id,
+			type : view.type
+		};
+
+		app.TaskElementDao.create(data).done(function(obj) {
+			brite.display("TaskElementView",null,{task_id:view.task_id});
+		});
 	}
 	// --------- /Event Methods --------- //
 	

@@ -9,9 +9,24 @@
         	</div>
         </div>
         
-        <div class="TaskElementCreate-content">  
-        	
+        <div class="TaskElementCreate-content modal-body">  
+        	{{if type == 'Text'}}
+        		<div class="form-vertical">
+					<div class="control-group">
+						<div class="control-label">Text:</div>
+						<div class="controls">
+							<input type='text' name="value" value="{{:value}}" />
+						</div>
+					</div>
+				</div>
+			{{else}}
+				will coming soon¡£¡£¡£
+        	{{/if}}
         </div>
+        
+        <div class="TaskElementCreate-footer footerPart">
+			<div class="btn btn-primary btnCreate">Save</div>
+		</div>
 	</div>  
 </script>
 
