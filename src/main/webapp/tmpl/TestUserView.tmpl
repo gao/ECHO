@@ -1,12 +1,11 @@
 <script id="tmpl-TestUserView" type="text/html">
 	<div class="TestUserView">
         <div class="TestUserView-header heading">
-            <div class="back">
-        		<button class="btn btn-inverse btn-mini btnBack">Back</button>
-        	</div>
+        	<div class="lineNavMenu clickAble"><i class="icon-align-justify"></i></div>
         	<div class="title">
         		<span>Users</span>
         	</div>
+        	<div class="triangleMenu"><i class="icon-eject"></i></div>
         </div>
         
         <div class="TestUserView-content">  
@@ -30,7 +29,7 @@
 					<div class="user-name">{{:name}}</div>
 					<div class="user-label">{{:label}}</div>
 				</div>
-				<div class="media-icon"><span><i class="icon-play-circle"></i></span></div>
+				<div class="media-icon"><span class="run-user"><i class="run-user icon-play-circle"></i></span></div>
 			</div>	
       	{{/for}}
 	</div>

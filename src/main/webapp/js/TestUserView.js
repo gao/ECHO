@@ -21,9 +21,12 @@
 			
 			"btap; .btnUser": btnUserMethod,
 			
-			"btap; .btnBack": btnBackMethod,
+			"btap; .lineNavMenu.clickAble": lineNavMenuMethod,
 			
-			"btap; .userPart": btnUserUpdateMethod
+			"btap; .userPart": btnUserUpdateMethod,
+			
+			"btap; .run-user": btnRunUserMethod
+			
 		}
 
 	});
@@ -35,16 +38,22 @@
 	}
 	
 	function btnUserUpdateMethod(event){
+		if($(event.target).hasClass("run-user"))return;
 		var view = this;
 		var user_id = $(event.currentTarget).attr("data-entity-id");
 		brite.display("TestUserCreate",null,{study_id:view.study_id,user_id:user_id});
 	}
 	
-	function btnBackMethod(){
+	function btnRunUserMethod(event){
 		var view = this;
-		brite.display("StudyCreate",null,{study_id:view.study_id});
+		var user_id = $(event.currentTarget).closest(".userPart").attr("data-entity-id");
+		brite.display("RunUserView",null,{study_id:view.study_id,user_id:user_id});
 	}
 	
+	function lineNavMenuMethod(event){
+		var view = this;
+		brite.display("LineNavMenuView",null,{study_id:view.study_id});
+	}
 	// --------- /Event Methods --------- //
 	
 
