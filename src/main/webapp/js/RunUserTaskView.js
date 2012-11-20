@@ -9,8 +9,9 @@
 			var view = this;
 			var index = data.task_index || 0;
 			return $.when(app.StudyDao.get(data.study_id),app.TaskDao.getTasksByStudy(data.study_id)).pipe(function(study,tasks){
+				var hasTask = tasks.length > 0 ? true : false;
 				view.task = tasks[index];
-				return $("#tmpl-RunUserTaskView").render({study:study,task:tasks[index]});
+				return $("#tmpl-RunUserTaskView").render({study:study,task:tasks[index],hasTask:hasTask});
 			});
 		},
 		
@@ -25,6 +26,8 @@
 		
 		events: {
 			
+			"btap; .btnCreateTask": btnCreateTaskMethod ,
+			
 			"btap; .result-content .btn": btnRatingSelectedMethod ,
 			
 			"btap; .btnNext": btnNextMethod 
@@ -34,6 +37,10 @@
 	});
 	
 	// --------- Event Methods --------- //
+	function btnCreateTaskMethod(){
+		var view = this;
+		brite.display("TaskCreate",null,{study_id:view.study_id});
+	}
 	
 	function btnRatingSelectedMethod(event){
 		var $thisBtn = $(event.currentTarget);
@@ -58,7 +65,6 @@
 		app.AnswerDao.create(answer).done(function(answer) {
 			brite.display("RunUserTaskView",null,{study_id:view.study_id, user_id:view.user_id, task_index:view.task_index+1});
 		});
-		
 	}
 	// --------- /Event Methods --------- //
 	

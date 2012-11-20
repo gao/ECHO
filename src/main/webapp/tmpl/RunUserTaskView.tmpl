@@ -7,7 +7,7 @@
         	</div>
         	
         	<div class="task-content">
-        		{{if task}}
+        		{{if hasTask}}
 					<div class="questionTitle">{{:task.questionTitle}}</div>
 					<div class="info">
 						{{if task.questionType == "string"}}
@@ -42,12 +42,19 @@
 	  						</div>
 						{{/if}}
 					</div>
+				{{else}}
+					<div class="newTask">
+						<span class="message">Have not Task yet &nbsp;,&nbsp; Create now </span>
+	        			<button class="btn btn-large btn-primary btnCreateTask">Create Task</button>
+	        		</div>
 				{{/if}}
         	</div>
         </div>
         
         <div class="RunUserTaskView-footer"> 
+        	{{if hasTask}}
         	<button class="btns btnNext">Next</button>
+        	{{/if}}
         <div>
         
 	</div>  
