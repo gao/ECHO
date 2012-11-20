@@ -20,7 +20,7 @@
 				if(hasTask){
 					obj.task = view.task = tasks[index];
 					app.AnswerDao.list({match:{task_id:view.task.id,user_id:data.user_id}}).done(function(answers){
-						if(answers.length>0) obj.answer = answers[0];
+						if(answers.length>0) obj.answer = view.answer = answers[0];
 						innerDfd.resolve(obj);
 					});
 				}else{
