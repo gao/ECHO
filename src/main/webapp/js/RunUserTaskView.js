@@ -53,7 +53,9 @@
 			
 			"btap; .btnNext": btnNextMethod ,
 			
-			"btap; .btnPrevious": btnPreviousMethod 
+			"btap; .btnPrevious": btnPreviousMethod ,
+			
+			"btap; .btnSubmit": btnSubmitMethod 
 			
 		}
 
@@ -72,9 +74,38 @@
 	
 	function btnNextMethod(){
 		var view = this;
+		saveOrUpdateAnswer.call(view).done(function(answer){
+			brite.display("RunUserTaskView",null,{study_id:view.study_id, user_id:view.user_id, task_index:view.task_index+1});
+		});
+	}
+	
+	function btnPreviousMethod(){
+		var view = this;
+		saveOrUpdateAnswer.call(view).done(function(answer){
+			brite.display("RunUserTaskView",null,{study_id:view.study_id, user_id:view.user_id, task_index:view.task_index-1});
+		});
+	}
+	
+	function btnPreviousMethod(){
+		var view = this;
+		saveOrUpdateAnswer.call(view).done(function(answer){
+			//submit code...
+		});
+	}
+	// --------- /Event Methods --------- //
+	
+	
+	// --------- private Methods --------- //
+	function saveOrUpdateAnswer(){
+		var view = this;
 		var $e = view.$el;
+		
+		var dfd = $.Deferred();
 		var $result_content = $e.find(".task-content .result-content");
-		var answer = {task_id:view.task.id, user_id:view.user_id};
+		var answer = view.answer;
+		if(!view.answer){
+			answer = {task_id:view.task.id, user_id:view.user_id};
+		}
 		if(view.task.questionType == "string"){
 			answer.result = $result_content.find("textarea[name='answer']").val();
 		}else if(view.task.questionType == "true-false"){
@@ -84,18 +115,20 @@
 		}else if(view.task.questionType == "rating-10points"){
 			answer.result = $result_content.find("button.selected").attr("data-val");
 		}
+		if(answer.id){
+			app.AnswerDao.update(answer).done(function(answer) {
+				dfd.resolve(answer);
+			});
+		}else{
+			app.AnswerDao.create(answer).done(function(answer) {
+				dfd.resolve(answer);
+			});
+		}
 		
-		app.AnswerDao.create(answer).done(function(answer) {
-			brite.display("RunUserTaskView",null,{study_id:view.study_id, user_id:view.user_id, task_index:view.task_index+1});
-		});
+		return dfd.promise();
 	}
 	
-	function btnPreviousMethod(){
-		var view = this;
-		brite.display("RunUserTaskView",null,{study_id:view.study_id, user_id:view.user_id, task_index:view.task_index-1});
-	}
-	
-	// --------- /Event Methods --------- //
+	// --------- /private Methods --------- //
 	
 
 })();
