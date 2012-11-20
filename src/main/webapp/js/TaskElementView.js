@@ -36,7 +36,7 @@
 	
 	function btnTaskElementMethod(event){
 		var view = this;
-		brite.display("ElementView",null,{task_id:view.task_id});
+		brite.display("ElementView",null,{task_id:view.task_id,study_id:view.study_id});
 	}
 	// --------- /Event Methods --------- //
 	

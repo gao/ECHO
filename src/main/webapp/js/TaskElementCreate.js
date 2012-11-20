@@ -15,6 +15,7 @@
 			var view = this;
 		 	var $e = view.$el;
 		 	
+		 	view.study_id = data.study_id;
 		 	view.task_id = data.task_id;
 		 	view.type = data.type;
 		},
@@ -30,7 +31,7 @@
 	// --------- Event Methods --------- //
 	function btnBackMethod(event){
 		var view = this;
-		brite.display("TaskElementView",null,{task_id:view.task_id});
+		brite.display("TaskElementView",null,{study_id:view.study_id,task_id:view.task_id});
 	}
 	
 	function btnCreateMethod(event){
@@ -45,7 +46,7 @@
 		};
 
 		app.TaskElementDao.create(data).done(function(obj) {
-			brite.display("TaskElementView",null,{task_id:view.task_id});
+			brite.display("TaskElementView",null,{study_id:view.study_id,task_id:view.task_id});
 		});
 	}
 	// --------- /Event Methods --------- //

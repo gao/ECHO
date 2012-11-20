@@ -15,6 +15,7 @@
 		 	var $e = view.$el;
 		 	
 		 	view.task_id = data.task_id;
+		 	view.study_id = data.study_id;
 		},
 		
 		events: {
@@ -40,7 +41,7 @@
 		
 		if(elementType == "Text"){
 			view.close();
-			brite.display("TaskElementCreate",null,{task_id:view.task_id,type:elementType});
+			brite.display("TaskElementCreate",null,{study_id:view.study_id,task_id:view.task_id,type:elementType});
 		}else if(elementType == "Image"){
 			view.close();
 		}else if(elementType == "Data"){
