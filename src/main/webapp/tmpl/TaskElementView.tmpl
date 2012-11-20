@@ -16,21 +16,21 @@
         	</div>
         	<div class="dashedLine"></div>
         	<div class="taskElementList">
-        		{{if label}}
+        		{{if task.label}}
         		<div class="taskElementPart">
-        			<div class="taskLabel">{{:label}}</div>
+        			<div class="taskLabel">{{:task.label}}</div>
         		</div>
         		{{/if}}
-        		{{if questionTitle}}
+        		{{if task.questionTitle}}
         		<div class="taskElementPart">
-					<div class="questionTitle">{{:questionTitle}}</div>
+					<div class="questionTitle">{{:task.questionTitle}}</div>
 					<div class="info">
-						{{if questionType == "true-false"}}
+						{{if task.questionType == "true-false"}}
 							<div class="btn-group">
 	 							<button class="btn">True</button>
 	  							<button class="btn">False</button>
 	 						</div>
-						{{else questionType == "rating-5points"}}
+						{{else task.questionType == "rating-5points"}}
 	 						<div class="btn-group">
 	 							<button class="btn">1</button>
 	  							<button class="btn">2</button>
@@ -38,7 +38,7 @@
 	  							<button class="btn">4</button>
 	  							<button class="btn">5</button>
 	 						</div>
-						{{else questionType == "rating-10points"}}
+						{{else task.questionType == "rating-10points"}}
 							<div class="btn-group">
 	 							<button class="btn">1</button>
 	  							<button class="btn">2</button>
@@ -57,6 +57,16 @@
 					</div>
 				</div>
 				{{/if}}
+				
+				{{for taskElement}}
+					{{if elementType == "Text"}}
+	        		<div class="taskElementPart">
+	        			<div class="taskLabel">{{:elementValue}}</div>
+	        		</div>
+	        		{{else elementType == "Image"}}
+	        			<span>will coming soon...</span>
+	        		{{/if}}
+        		{{/for}}
         	</div>
         </div>
 	</div>  

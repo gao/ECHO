@@ -6,8 +6,8 @@
 		parent : ".MainScreen-content"
 	}, {
 		create : function(data, config) {
-			return $.when(app.TaskDao.get(data.task_id)).pipe(function(task){
-				return $("#tmpl-TaskElementView").render(task);
+			return $.when(app.TaskDao.get(data.task_id),app.TaskElementDao.list({match:{task_id:data.task_id}})).pipe(function(task,taskElement){
+				return $("#tmpl-TaskElementView").render({task:task,taskElement:taskElement});
 			});	
 		},
 		

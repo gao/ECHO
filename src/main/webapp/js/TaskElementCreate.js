@@ -40,9 +40,9 @@
 
 		var value = $e.find("input[name='value']").val();
 		var data = {
-			value : value,
+			elementValue : value,
 			task_id : view.task_id,
-			type : view.type
+			elementType : view.type
 		};
 
 		app.TaskElementDao.create(data).done(function(obj) {
