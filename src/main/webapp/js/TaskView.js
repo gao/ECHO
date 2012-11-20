@@ -23,7 +23,7 @@
 			
 			"btap; .taskPart": taskPartMethod,
 			
-			"btap; .lineNavMenu.clickAble": lineNavMenuMethod,
+			"btap; .lineNavMenu.clickAble": lineNavMenuMethod
 		}
 
 	});

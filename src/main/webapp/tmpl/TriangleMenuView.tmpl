@@ -1,0 +1,22 @@
+<script id="tmpl-TriangleMenuView" type="text/html">
+	<div class="TriangleMenuView">
+        <div class="TriangleMenuView-header heading">
+        	<div class="title">
+        		<span>Task</span>
+        	</div>
+        </div>
+        
+        <div class="TriangleMenuView-content">
+        	<div class="elementType">
+        		<ul>
+        			{{if isModeratorView}}
+			    	<li data-entity="CommonView">Common View</li>
+			    	{{else}}
+			    	<li data-entity="ModeratorView">Moderator View</li>
+			    	{{/if}}
+			        <li data-entity="Edit">Edit</li>
+			  	</ul>
+        	</div>
+        </div>
+	</div>  
+</script>

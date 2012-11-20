@@ -22,7 +22,9 @@
 		events: {
 			"btap; .btnBack": btnBackMethod, 
 			
-			"btap; .btnTaskElement": btnTaskElementMethod
+			"btap; .btnTaskElement": btnTaskElementMethod,
+			
+			"btap; .triangleMenu.clickAble": triangleMenuMethod
 
 		}
 
@@ -37,6 +39,11 @@
 	function btnTaskElementMethod(event){
 		var view = this;
 		brite.display("ElementView",null,{task_id:view.task_id,study_id:view.study_id});
+	}
+	
+	function triangleMenuMethod(event){
+		var view = this;
+		brite.display("TriangleMenuView",null,{study_id:view.study_id,task_id:view.task_id});
 	}
 	// --------- /Event Methods --------- //
 	
