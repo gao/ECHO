@@ -53,7 +53,15 @@
         
         <div class="RunUserTaskView-footer"> 
         	{{if hasTask}}
-        	<button class="btns btnNext">Next</button>
+	        	{{if hasPrevious}}
+	        	<button class="btns btnPrevious">Previous</button>
+	        	{{/if}}
+	        	{{if hasNext}}
+	        	<button class="btns btnNext">Next</button>
+	        	{{/if}}
+	        	{{if hasSubmit}}
+	        	<button class="btns btnSubmit">Submit</button>
+	        	{{/if}}
         	{{/if}}
         <div>
         
